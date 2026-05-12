@@ -115,7 +115,7 @@ body,html{transition:background var(--t) var(--ease),color var(--t) var(--ease);
 .icon-btn:hover{transform:scale(1.06);}
 .icon-btn:active{transform:scale(.92);}
 .icon-btn svg{width:15px;height:15px;}
-
+ 
 /* Dashboard install button — accent-tinted so it stands out */
 .dash-install-btn{
   color:var(--accent);
@@ -348,7 +348,7 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
 .fmt-color-inp{width:22px;height:22px;border:1px solid var(--border);border-radius:4px;cursor:pointer;background:none;padding:1px;-webkit-appearance:none;flex-shrink:0;}
 .fmt-color-inp::-webkit-color-swatch-wrapper{padding:0;}
 .fmt-color-inp::-webkit-color-swatch{border:none;border-radius:3px;}
-
+ 
 /* Page flip nav — bottom right */
 .page-flip-nav{position:absolute;bottom:12px;right:12px;display:flex;align-items:center;gap:7px;z-index:5;}
 .flip-btn{width:34px;height:34px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-b);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:16px;box-shadow:var(--shadow-sm);transition:background .15s,border-color .15s,color .15s,transform .12s;}
@@ -432,7 +432,7 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
 .wb-outer.flip-in-fwd{animation:wbSlideInRight .25s cubic-bezier(.4,0,.2,1) forwards;}
 .wb-outer.flip-out-back{animation:wbSlideOutRight .25s cubic-bezier(.4,0,.2,1) forwards;}
 .wb-outer.flip-in-back{animation:wbSlideInLeft .25s cubic-bezier(.4,0,.2,1) forwards;}
-
+ 
 @keyframes wbSlideOutLeft{
   0%{transform:translateX(0);opacity:1;}
   100%{transform:translateX(-100%);opacity:0;}
@@ -532,7 +532,7 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
 .ib-btn{background:var(--btn);color:var(--btn-t);border:none;border-radius:6px;padding:6px 13px;font-size:11.5px;font-family:'DM Mono',monospace;font-weight:500;cursor:pointer;letter-spacing:.04em;flex-shrink:0;transition:opacity .15s,background var(--t),color var(--t);}
 .ib-btn:hover{opacity:.8;}
 .ib-x{background:none;border:none;color:var(--text3);cursor:pointer;font-size:19px;line-height:1;padding:2px 0 2px 4px;flex-shrink:0;transition:color .15s;}
-
+ 
 /* ── NOTIFICATION PERMISSION BANNER ── */
 #notif-banner{
   position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);
@@ -563,7 +563,7 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
 .nb-allow:hover{opacity:.85;}
 .nb-deny{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-sm);padding:9px 14px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);cursor:pointer;transition:color .15s;}
 .nb-deny:hover{color:var(--text2);}
-
+ 
 /* ── IN-APP REMINDER TOAST (fallback when notifications denied) ── */
 #reminder-toast{
   position:fixed;
@@ -589,9 +589,9 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
 .rt-title{font-family:'DM Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:2px;}
 .rt-msg{font-size:13px;font-weight:300;color:var(--text2);}
 .rt-close{background:none;border:none;color:var(--text3);font-size:20px;cursor:pointer;line-height:1;flex-shrink:0;}
-
+ 
 @media(max-width:390px){.form-row{grid-template-columns:1fr;}.streak-num{font-size:38px;}.stats-pill{display:none;}.presets-wrap{grid-template-columns:1fr 1fr;}}
-
+ 
 /* ══════ TODO PAGE ══════ */
 #page-todo .scroll-body{padding-bottom:120px;}
 .todo-input-row{display:flex;gap:8px;padding:16px 20px 0;}
@@ -640,8 +640,8 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
 .todo-progress-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
 .todo-progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .4s var(--ease);}
 .todo-progress-lbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--text3);margin-top:5px;transition:color var(--t);}
-
-
+ 
+ 
 /* ══════ SPLASH START SCREEN ══════ */
 #page-splash{background:var(--bg);z-index:200;}
 #page-splash.active{bottom:0;} /* no nav */
@@ -674,7 +674,176 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
 /* Page exit animation when leaving splash */
 #page-splash.exit{animation:splashExit .4s var(--ease) forwards;}
 @keyframes splashExit{to{opacity:0;transform:scale(.96);}}
-
+ 
+ 
+/* ══════ STATS PAGE ══════ */
+#page-stats .scroll-body{padding-bottom:60px;}
+ 
+/* Tab switcher — two plain text buttons, underline only */
+.st-tabs{display:flex;gap:0;padding:20px 24px 0;border-bottom:1px solid var(--border);transition:border-color var(--t);}
+.st-tab{background:none;border:none;padding:0 0 14px 0;margin-right:28px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);cursor:pointer;border-bottom:1.5px solid transparent;transition:color .15s,border-color .15s;}
+.st-tab.active{color:var(--text);border-bottom-color:var(--accent);}
+ 
+/* ── CALENDAR TAB ── */
+#st-cal{padding:28px 24px 0;}
+ 
+/* Month nav */
+.st-cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.st-cal-title{font-family:'DM Serif Display',serif;font-size:18px;letter-spacing:-.02em;color:var(--text);transition:color var(--t);}
+.st-cal-arrows{display:flex;gap:2px;}
+.st-cal-arr{background:none;border:none;color:var(--text3);font-size:18px;line-height:1;padding:4px 8px;cursor:pointer;transition:color .15s;-webkit-tap-highlight-color:transparent;}
+.st-cal-arr:hover{color:var(--text);}
+ 
+/* Day-of-week header */
+.st-cal-dow{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:4px;}
+.st-cal-dow-cell{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);text-align:center;padding:2px 0;transition:color var(--t);}
+ 
+/* Calendar grid */
+.st-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.st-day{aspect-ratio:1;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);position:relative;transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;border:1px solid var(--border);}
+.st-day.in-month{color:var(--text2);}
+.st-day.blank{}
+.st-day.has-log{cursor:pointer;}
+.st-day.s1{background:rgba(82,232,122,.1);}
+.st-day.s2{background:rgba(82,232,122,.25);}
+.st-day.s3{background:rgba(82,232,122,.45);}
+.st-day.s4{background:rgba(82,232,122,.7);color:#0a0a0a;}
+[data-theme=light] .st-day.s4{color:#fff;}
+.st-day.has-log:hover{opacity:.75;}
+.st-day.is-today::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 4px var(--accent);}
+.st-day.s4.is-today::after{background:#0a0a0a;}
+[data-theme=light] .st-day.s4.is-today::after{background:#fff;}
+.st-day.picked{outline:1.5px solid var(--accent);outline-offset:-1px;}
+ 
+/* Day detail — appears below grid */
+.st-day-detail{margin-top:20px;padding-top:18px;border-top:1px solid var(--border);animation:fadeIn .15s ease;transition:border-color var(--t);}
+.st-day-detail-date{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.st-day-session{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--border);transition:border-color var(--t);}
+.st-day-session:last-child{border-bottom:none;}
+.st-day-session-subj{font-size:13px;color:var(--text);font-weight:400;transition:color var(--t);}
+.st-day-session-time{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);transition:color var(--t);}
+ 
+/* ── INSIGHTS TAB ── */
+#st-ins{padding:0 24px;}
+ 
+/* A single "section" is just a heading + content, separated by generous space */
+.st-section{padding-top:32px;}
+.st-section-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--text3);margin-bottom:20px;transition:color var(--t);}
+ 
+/* Numbers row — plain, no chrome */
+.st-numbers{display:flex;gap:0;}
+.st-num{flex:1;display:flex;flex-direction:column;gap:6px;}
+.st-num+.st-num{padding-left:20px;border-left:1px solid var(--border);}
+.st-num-val{font-family:'DM Serif Display',serif;font-size:36px;letter-spacing:-.06em;line-height:1;color:var(--text);transition:color var(--t);}
+.st-num-val.on{color:var(--accent);}
+.st-num-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);transition:color var(--t);}
+ 
+/* Week bars — thin, minimal, no labels other than day */
+.st-bars{display:flex;align-items:flex-end;gap:5px;height:56px;margin-bottom:8px;}
+.st-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.st-bar{width:100%;border-radius:2px 2px 0 0;min-height:2px;background:var(--bg3);transition:height .35s var(--ease);}
+.st-bar.active{background:rgba(82,232,122,.3);}
+.st-bar.active.now{background:var(--accent);}
+[data-theme=light] .st-bar.active{background:rgba(26,110,56,.3);}
+[data-theme=light] .st-bar.active.now{background:var(--accent);}
+.st-bar-day{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.04em;color:var(--text3);transition:color var(--t);}
+.st-bar-day.now{color:var(--accent);}
+ 
+/* Subjects — name + thin bar + count, pure list */
+.st-subj-list{display:flex;flex-direction:column;}
+.st-subj-row{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--border);transition:border-color var(--t);}
+.st-subj-row:last-child{border-bottom:none;}
+.st-subj-name{font-size:13px;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:color var(--t);}
+.st-subj-track{flex:0 0 60px;height:1px;background:var(--border);position:relative;transition:background var(--t);}
+.st-subj-fill{position:absolute;top:0;left:0;height:100%;background:var(--accent);transition:width .5s var(--ease);}
+.st-subj-n{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);flex-shrink:0;transition:color var(--t);}
+ 
+/* Facts — key/value pairs, no borders, just spacing */
+.st-facts{display:flex;flex-direction:column;gap:0;}
+.st-fact{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--border);transition:border-color var(--t);}
+.st-fact:last-child{border-bottom:none;}
+.st-fact-key{font-size:13px;font-weight:300;color:var(--text2);transition:color var(--t);}
+.st-fact-val{font-family:'DM Mono',monospace;font-size:12px;color:var(--text);transition:color var(--t);}
+.st-fact-val.on{color:var(--accent);}
+ 
+/* Tooltip */
+.hm-tip{display:none;}
+ 
+ 
+ 
+/* ── PIE CHART (insights) ── */
+.st-pie-section{margin-top:28px;}
+.st-pie-canvas-wrap{display:flex;align-items:center;gap:20px;}
+#st-pie-canvas{flex-shrink:0;}
+.st-pie-legend{display:flex;flex-direction:column;gap:7px;flex:1;min-width:0;}
+.st-pie-legend-item{display:flex;align-items:center;gap:8px;}
+.st-pie-legend-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.st-pie-legend-name{font-size:12px;color:var(--text2);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.st-pie-legend-pct{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);}
+.st-pie-empty{font-size:12px;font-weight:300;color:var(--text3);font-style:italic;padding:12px 0;}
+ 
+ 
+ 
+/* ── DESKTOP: calendar fills the viewport, no scroll ── */
+@media(min-width:768px){
+  #page-stats .scroll-body{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    overflow:hidden;
+    padding-bottom:0;
+  }
+  #page-stats .ph{flex-shrink:0;}
+  .st-tabs{flex-shrink:0;}
+  #st-cal{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+    padding:16px 80px 12px;
+  }
+  .st-cal-nav{flex-shrink:0;margin-bottom:14px;}
+  .st-cal-dow{flex-shrink:0;}
+  .st-cal-grid{
+    flex:0 0 auto;
+    grid-auto-rows:95px;
+    gap:4px;
+  }
+  .st-day{
+    aspect-ratio:unset !important;
+    min-height:0;
+    font-size:12px;
+  }
+  #st-day-detail{flex-shrink:0;margin-top:8px;}
+  #st-ins{
+    flex:1;
+    overflow-y:auto;
+    padding-bottom:16px;
+  }
+}
+ 
+ 
+/* ── ACTIVITY HEATMAP (calendar) ── */
+.st-heatmap-wrap{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);flex-shrink:0;}
+.st-heatmap-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;}
+.st-heatmap-grid{display:flex;gap:3px;overflow-x:auto;padding-bottom:4px;}
+.st-hm-col{display:flex;flex-direction:column;gap:3px;flex-shrink:0;}
+.st-hm-cell{width:11px;height:11px;border-radius:2px;background:var(--bg3);transition:background .15s;cursor:default;}
+.st-hm-cell.h1{background:rgba(82,232,122,.18);}
+.st-hm-cell.h2{background:rgba(82,232,122,.38);}
+.st-hm-cell.h3{background:rgba(82,232,122,.6);}
+.st-hm-cell.h4{background:rgba(82,232,122,.85);}
+[data-theme=light] .st-hm-cell.h1{background:rgba(26,110,56,.15);}
+[data-theme=light] .st-hm-cell.h2{background:rgba(26,110,56,.30);}
+[data-theme=light] .st-hm-cell.h3{background:rgba(26,110,56,.52);}
+[data-theme=light] .st-hm-cell.h4{background:rgba(26,110,56,.78);}
+.st-hm-months{display:flex;gap:3px;margin-bottom:4px;}
+.st-hm-month-lbl{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.06em;color:var(--text3);white-space:nowrap;width:15px;}
+.st-hm-legend{display:flex;align-items:center;gap:6px;margin-top:10px;justify-content:flex-end;}
+.st-hm-legend-lbl{font-family:'DM Mono',monospace;font-size:11px;color:var(--text2);}
+.st-hm-legend-cells{display:flex;gap:4px;}
+.st-hm-cell.legend-cell{width:14px;height:14px;}
+ 
 </style>
 </head>
 <body>
@@ -711,7 +880,7 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
   </button>
 </div>
 </div>
-
+ 
 <!-- ██ HOME ██ -->
 <div class="page" id="page-home">
 <div class="home-wrap">
@@ -981,6 +1150,10 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
     <svg class="n-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5h9M7 10h9M7 15h9"/><circle cx="3.5" cy="5" r="1"/><circle cx="3.5" cy="10" r="1"/><path d="M2.5 14.5l1 1 2-2"/></svg>
     <span class="n-lbl">Tasks</span>
   </button>
+  <button class="nav-btn" data-page="stats">
+    <svg class="n-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="3" height="4" rx="1"/><rect x="8.5" y="9" width="3" height="9" rx="1"/><rect x="15" y="4" width="3" height="14" rx="1"/><path d="M3.5 14l5-5 5-3 3-3" stroke-width="1.3"/></svg>
+    <span class="n-lbl">Stats</span>
+  </button>
 </nav>
 </div>
  
@@ -1018,9 +1191,129 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
   </div>
 </div>
 </div>
-
+ 
+<!-- ██ STATS ██ -->
+<div class="page" id="page-stats">
+<div class="scroll-body">
+ 
+  <div class="ph" style="margin-bottom:0;">
+    <div class="ptitle">S<em>tats</em></div>
+  </div>
+ 
+  <!-- Tab switcher -->
+  <div class="st-tabs">
+    <button class="st-tab active" data-stab="calendar">Calendar</button>
+    <button class="st-tab" data-stab="insights">Insights</button>
+  </div>
+ 
+  <!-- ══ CALENDAR ══ -->
+  <div id="st-cal">
+    <div class="st-cal-nav">
+      <span class="st-cal-title" id="st-cal-title"></span>
+      <div class="st-cal-arrows">
+        <button class="st-cal-arr" id="st-cal-prev">‹</button>
+        <button class="st-cal-arr" id="st-cal-next">›</button>
+      </div>
+    </div>
+    <div class="st-cal-dow">
+      <div class="st-cal-dow-cell">S</div>
+      <div class="st-cal-dow-cell">M</div>
+      <div class="st-cal-dow-cell">T</div>
+      <div class="st-cal-dow-cell">W</div>
+      <div class="st-cal-dow-cell">T</div>
+      <div class="st-cal-dow-cell">F</div>
+      <div class="st-cal-dow-cell">S</div>
+    </div>
+    <div class="st-cal-grid" id="st-cal-grid"></div>
+    <div id="st-day-detail"></div>
+    <!-- Activity heatmap -->
+    <div class="st-heatmap-wrap">
+      <div class="st-heatmap-months" id="st-hm-months"></div>
+      <div class="st-heatmap-grid" id="st-heatmap-grid"></div>
+      <div class="st-hm-legend">
+        <span class="st-hm-legend-lbl">Less</span>
+        <div class="st-hm-legend-cells">
+          <div class="st-hm-cell" style="width:14px;height:14px;"></div>
+          <div class="st-hm-cell h1" style="width:14px;height:14px;"></div>
+          <div class="st-hm-cell h2" style="width:14px;height:14px;"></div>
+          <div class="st-hm-cell h3" style="width:14px;height:14px;"></div>
+          <div class="st-hm-cell h4" style="width:14px;height:14px;"></div>
+        </div>
+        <span class="st-hm-legend-lbl">More</span>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <!-- ══ INSIGHTS ══ -->
+  <div id="st-ins" style="display:none;">
+ 
+    <!-- Numbers -->
+    <div class="st-section">
+      <div class="st-section-title">Overview</div>
+      <div class="st-numbers">
+        <div class="st-num">
+          <div class="st-num-val" id="st-n-sessions">0</div>
+          <div class="st-num-label">Sessions</div>
+        </div>
+        <div class="st-num">
+          <div class="st-num-val" id="st-n-days">0</div>
+          <div class="st-num-label">Days</div>
+        </div>
+        <div class="st-num">
+          <div class="st-num-val on" id="st-n-streak">0</div>
+          <div class="st-num-label">Streak</div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- This week -->
+    <div class="st-section">
+      <div class="st-section-title">This week</div>
+      <div class="st-bars" id="st-bars"></div>
+    </div>
+ 
+    <!-- Subjects (pie chart) -->
+    <div class="st-section st-pie-section">
+      <div class="st-pie-canvas-wrap">
+        <canvas id="st-pie-canvas" width="140" height="140" style="width:140px;height:140px;flex-shrink:0;"></canvas>
+        <div class="st-pie-legend" id="st-pie-legend"></div>
+      </div>
+    </div>
+ 
+    <!-- Facts -->
+    <div class="st-section">
+      <div class="st-section-title">Summary</div>
+      <div class="st-facts">
+        <div class="st-fact">
+          <span class="st-fact-key">Current streak</span>
+          <span class="st-fact-val on" id="st-f-streak">—</span>
+        </div>
+        <div class="st-fact">
+          <span class="st-fact-key">Longest streak</span>
+          <span class="st-fact-val" id="st-f-best">—</span>
+        </div>
+        <div class="st-fact">
+          <span class="st-fact-key">Peak day</span>
+          <span class="st-fact-val" id="st-f-peak">—</span>
+        </div>
+        <div class="st-fact">
+          <span class="st-fact-key">This week</span>
+          <span class="st-fact-val" id="st-f-week">—</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+ 
+</div>
+</div>
+ 
+<!-- heatmap tooltip stub -->
+<div class="hm-tip" id="hm-tip"></div>
+ 
 <div class="congo-wrap" id="congo-wrap"></div>
-
+ 
 <!-- OVERLAYS -->
 <div id="focus-ov">
   <p class="fov-kicker" id="fov-kicker">Locked In</p>
@@ -1079,7 +1372,7 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
     <button class="nb-deny" id="notif-deny-btn">Not Now</button>
   </div>
 </div>
-
+ 
 <!-- ██ IN-APP REMINDER TOAST (fallback) ██
      Shown every hour when notifications are denied or unavailable. -->
 <div id="reminder-toast">
@@ -1090,7 +1383,7 @@ label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-t
   </div>
   <button class="rt-close" id="reminder-toast-close" aria-label="Dismiss">×</button>
 </div>
-
+ 
 <!-- Modal: Send WB page to Notes -->
 <div id="install-banner"><span style="font-size:16px;flex-shrink:0;">⚡</span><div class="ib-text"><strong>Install StudyStreak</strong>Works offline · Instant load</div><button class="ib-btn" id="pwa-install-btn">Install</button><button class="ib-x" id="pwa-dismiss-btn">×</button></div>
 <div id="toast"></div>
@@ -1122,6 +1415,8 @@ function applyTheme(t){
       :`<path d="${moonPath}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`;
   });
   if(wb.ctx)setTimeout(()=>wb.resizeAndRedraw(),50);
+  // Redraw pie chart if insights tab is open
+  if(_sTab==='insights')setTimeout(()=>_renderInsights(),30);
 }
 function toggleTheme(){const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';localStorage.setItem('ss_theme',t);applyTheme(t);}
 $('theme-toggle').addEventListener('click',toggleTheme);
@@ -1138,6 +1433,7 @@ function navTo(page){
   if(page==='subjects')renderSubjList();
   if(page==='timer')renderTsSess();
   if(page==='todo')renderTodos();
+  if(page==='stats')renderStats();
 }
 $('home-cta').addEventListener('click',()=>{localStorage.setItem('ss_seen','1');navTo('dashboard');});
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>navTo(b.dataset.page)));
@@ -1188,7 +1484,7 @@ function submitLog(){
   setTimeout(()=>{btn.textContent=orig;btn.style.background='';btn.style.color='';},1600);
   toast(wasNew?'Streak updated!':'Session logged!');
   $('ls').value=$('ln').value=$('lt').value='';
-
+ 
   // After logging a session, ask for notification permission (once only)
   if (!localStorage.getItem('ss_notif_asked') && 'Notification' in window && Notification.permission === 'default') {
     setTimeout(showNotifBanner, 1500);
@@ -1282,7 +1578,7 @@ function switchDetailTab(tab){
 /* ═══ NOTES PAGING ═══ */
 // Forward-declared — overwritten below by fmt section
 let updateFmtButtons=()=>{};
-
+ 
 const notes={
   subjId:null,pages:[],idx:0,
   loadSubj(s){
@@ -1811,7 +2107,7 @@ function spawnTimerSparks(){
   // Also spawn full congo
   spawnCongo();
 }
-
+ 
 function timerDone(){
   pauseTimer();
   const p=PRESETS[timer.presetIdx]||{name:'Custom',mins:Math.floor(timer.total/60)};
@@ -1870,12 +2166,12 @@ $('fov-exit-btn').addEventListener('click',exitFocus);
  *  3. Re-show after 3 days if dismissed (but not if permanently denied)
  */
 let _deferredPrompt = null;
-
+ 
 function isRunningStandalone() {
   return window.matchMedia('(display-mode: standalone)').matches
     || window.navigator.standalone === true;
 }
-
+ 
 function shouldShowInstallBanner() {
   if (isRunningStandalone()) return false;
   if (sessionStorage.getItem('ss_install_dismissed_session')) return false;
@@ -1886,12 +2182,12 @@ function shouldShowInstallBanner() {
   }
   return true;
 }
-
+ 
 // Capture the install prompt before it auto-fires
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   _deferredPrompt = e;
-
+ 
   // Small delay so it doesn't pop immediately on load
   setTimeout(() => {
     if (shouldShowInstallBanner()) {
@@ -1904,7 +2200,7 @@ window.addEventListener('beforeinstallprompt', e => {
     }
   }, 2500);
 });
-
+ 
 // Install button clicked — trigger the native prompt
 document.getElementById('pwa-install-btn').addEventListener('click', async () => {
   if (!_deferredPrompt) return;
@@ -1925,14 +2221,14 @@ document.getElementById('pwa-install-btn').addEventListener('click', async () =>
     }, 1500);
   }
 });
-
+ 
 // Dismiss — record session + timestamp so we don't spam
 document.getElementById('pwa-dismiss-btn').addEventListener('click', () => {
   document.getElementById('install-banner').classList.remove('on');
   sessionStorage.setItem('ss_install_dismissed_session', '1');
   localStorage.setItem('ss_install_dismissed_at', Date.now().toString());
 });
-
+ 
 // Already installed via OS prompt
 window.addEventListener('appinstalled', () => {
   toast('StudyStreak installed! ✓');
@@ -1963,7 +2259,7 @@ window.addEventListener('appinstalled', () => {
     }, 500);
   }, 1500);
 });
-
+ 
 /* ─── DASHBOARD INSTALL BUTTON ───
  * Always visible in the dashboard header on web browsers.
  * Behaviour:
@@ -1973,7 +2269,7 @@ window.addEventListener('appinstalled', () => {
  *   • Shows green checkmark if app is already installed
  */
 const dashInstallBtn = document.getElementById('dash-install-btn');
-
+ 
 // Hide immediately if already running as PWA
 if (isRunningStandalone()) {
   document.body.classList.add('pwa-installed');
@@ -1988,7 +2284,7 @@ if (isRunningStandalone()) {
   dashInstallBtn.classList.remove('dash-install-btn');
   dashInstallBtn.style.animation = 'none';
 }
-
+ 
 dashInstallBtn.addEventListener('click', async () => {
   if (isRunningStandalone()) {
     toast('Already installed! ✓');
@@ -2023,21 +2319,21 @@ dashInstallBtn.addEventListener('click', async () => {
     toast('Use Chrome or Edge to install this app 💡', 3500);
   }
 });
-
+ 
 /* ═══ SERVICE WORKER REGISTRATION ═══ */
 let _swReg = null;
-
+ 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
     try {
       _swReg = await navigator.serviceWorker.register('./sw.js');
-
+ 
       // Listen for controller change (new SW activated after update)
       navigator.serviceWorker.addEventListener('controllerchange', () => {
         // Optionally reload to get fresh assets
         // window.location.reload();
       });
-
+ 
       // Handle messages from SW (e.g., snooze action)
       navigator.serviceWorker.addEventListener('message', e => {
         if (e.data && e.data.type === 'snooze') {
@@ -2045,7 +2341,7 @@ if ('serviceWorker' in navigator) {
           toast(`Reminder snoozed for ${e.data.minutes} min`);
         }
       });
-
+ 
       // Try to register periodic background sync (Chrome Android only)
       if ('periodicSync' in _swReg) {
         try {
@@ -2057,13 +2353,13 @@ if ('serviceWorker' in navigator) {
           }
         } catch (_) { /* not supported — fallback handles it */ }
       }
-
+ 
     } catch (err) {
       console.warn('[StudyStreak] SW registration failed:', err);
     }
   });
 }
-
+ 
 /* ═══ NOTIFICATION PERMISSION + HOURLY REMINDERS ═══
  *
  * Flow:
@@ -2075,7 +2371,7 @@ if ('serviceWorker' in navigator) {
  * The interval fires in-tab. When the tab is hidden/closed, the
  * SW's periodicSync or a scheduled push handles background reminders.
  */
-
+ 
 const REMINDER_MSGS = [
   "Time to study! Don't break your streak 🔥",
   "An hour has passed — a short session counts! 📖",
@@ -2084,13 +2380,13 @@ const REMINDER_MSGS = [
   "Streak on the line — quick session? 🎯",
   "You logged a session earlier. Keep the momentum! ⚡",
 ];
-
+ 
 let _reminderInterval = null;
-
+ 
 function getReminderMsg() {
   return REMINDER_MSGS[Math.floor(Math.random() * REMINDER_MSGS.length)];
 }
-
+ 
 function showInAppReminder() {
   const msg = getReminderMsg();
   document.getElementById('reminder-toast-msg').textContent = msg;
@@ -2100,14 +2396,14 @@ function showInAppReminder() {
     document.getElementById('reminder-toast').classList.remove('on');
   }, 12000);
 }
-
+ 
 function sendSWReminder() {
   const msg = getReminderMsg();
   if (_swReg && _swReg.active) {
     _swReg.active.postMessage({ type: 'SHOW_REMINDER', message: msg });
   }
 }
-
+ 
 function startHourlyReminders() {
   clearInterval(_reminderInterval);
   _reminderInterval = setInterval(() => {
@@ -2121,18 +2417,18 @@ function startHourlyReminders() {
     }
   }, 60 * 60 * 1000); // every 1 hour
 }
-
+ 
 function scheduleInAppReminder(ms) {
   setTimeout(() => {
     if (!document.hidden) showInAppReminder();
   }, ms);
 }
-
+ 
 // Dismiss the in-app toast
 document.getElementById('reminder-toast-close').addEventListener('click', () => {
   document.getElementById('reminder-toast').classList.remove('on');
 });
-
+ 
 /* Notification permission banner logic */
 function showNotifBanner() {
   if ('Notification' in window && Notification.permission === 'default'
@@ -2140,17 +2436,17 @@ function showNotifBanner() {
     document.getElementById('notif-banner').classList.add('on');
   }
 }
-
+ 
 document.getElementById('notif-allow-btn').addEventListener('click', async () => {
   document.getElementById('notif-banner').classList.remove('on');
   localStorage.setItem('ss_notif_asked', '1');
-
+ 
   if (!('Notification' in window)) {
     toast('Notifications not supported on this browser.');
     startHourlyReminders(); // fall back to in-app
     return;
   }
-
+ 
   const permission = await Notification.requestPermission();
   if (permission === 'granted') {
     toast('Reminders enabled! You\'ll be nudged every hour 🔔');
@@ -2160,14 +2456,14 @@ document.getElementById('notif-allow-btn').addEventListener('click', async () =>
     startHourlyReminders(); // still start the in-app fallback
   }
 });
-
+ 
 document.getElementById('notif-deny-btn').addEventListener('click', () => {
   document.getElementById('notif-banner').classList.remove('on');
   localStorage.setItem('ss_notif_asked', '1');
   startHourlyReminders(); // start in-app fallback anyway
   toast('No problem — you can enable reminders later in browser settings.');
 });
-
+ 
 // Show notification banner 4 seconds after first session log
 // (also triggered on boot if permission was already granted)
 function maybeStartReminders() {
@@ -2183,21 +2479,21 @@ function maybeStartReminders() {
   }
 }
  
-
+ 
 /* ═══ TODO ═══ */
 let todos=[];
 let todoFilter='all';
 const CONGO_COLORS=['#52e87a','#3ab868','#a8f5c0','#ffffff','#c8ffda','#82f0a0'];
-
+ 
 function loadTodos(){try{todos=JSON.parse(localStorage.getItem('ss_todos')||'[]');}catch(_){todos=[];}}
 function saveTodos(){try{localStorage.setItem('ss_todos',JSON.stringify(todos));}catch(_){}}
-
+ 
 function addTodo(text){
   if(!text.trim())return;
   todos.push({id:Date.now(),text:text.trim(),done:false,createdAt:new Date().toISOString()});
   saveTodos();renderTodos();
 }
-
+ 
 function toggleTodo(id){
   const t=todos.find(x=>x.id===id);
   if(!t)return;
@@ -2205,12 +2501,12 @@ function toggleTodo(id){
   if(t.done){t.doneAt=new Date().toISOString();spawnCongo();}
   saveTodos();renderTodos();
 }
-
+ 
 function deleteTodo(id){
   todos=todos.filter(x=>x.id!==id);
   saveTodos();renderTodos();
 }
-
+ 
 function spawnCongo(){
   const wrap=$('congo-wrap');if(!wrap)return;
   const colors=CONGO_COLORS;
@@ -2229,7 +2525,7 @@ function spawnCongo(){
     setTimeout(()=>el.remove(),(dur+delay)*1000+100);
   }
 }
-
+ 
 function renderTodos(){
   const list=$('todo-list');
   const today=todayStr();
@@ -2281,7 +2577,7 @@ function renderTodos(){
     btn.addEventListener('click',e=>{e.stopPropagation();deleteTodo(parseInt(btn.dataset.id,10));});
   });
 }
-
+ 
 $('todo-add-btn').addEventListener('click',()=>{const v=$('todo-inp').value.trim();if(v){addTodo(v);$('todo-inp').value='';}else{$('todo-inp').focus();}});
 $('todo-inp').addEventListener('keydown',e=>{if(e.key==='Enter'){const v=$('todo-inp').value.trim();if(v){addTodo(v);$('todo-inp').value='';}e.preventDefault();}});
 document.querySelectorAll('.todo-filter').forEach(btn=>{
@@ -2292,7 +2588,253 @@ document.querySelectorAll('.todo-filter').forEach(btn=>{
   });
 });
 $('todo-clear-done').addEventListener('click',()=>{todos=todos.filter(t=>!t.done);saveTodos();renderTodos();toast('Done tasks cleared.');});
-
+ 
+ 
+/* ═══════════════════════════════
+   STATS PAGE
+   ═══════════════════════════════ */
+let _sTab = 'calendar';
+let _calY  = new Date().getFullYear();
+let _calM  = new Date().getMonth();
+let _calSel = null;
+ 
+// Tab switching
+document.querySelectorAll('.st-tab').forEach(b => {
+  b.addEventListener('click', () => {
+    _sTab = b.dataset.stab;
+    document.querySelectorAll('.st-tab').forEach(x => x.classList.toggle('active', x.dataset.stab === _sTab));
+    $('st-cal').style.display  = _sTab === 'calendar' ? '' : 'none';
+    $('st-ins').style.display  = _sTab === 'insights' ? '' : 'none';
+    if (_sTab === 'insights') _renderInsights();
+  });
+});
+ 
+$('st-cal-prev').addEventListener('click', () => {
+  _calM--; if (_calM < 0) { _calM = 11; _calY--; }
+  _calSel = null; _renderCal();
+});
+$('st-cal-next').addEventListener('click', () => {
+  _calM++; if (_calM > 11) { _calM = 0; _calY++; }
+  _calSel = null; _renderCal();
+});
+ 
+function _logsByDate() {
+  const m = {};
+  (DS.logs || []).forEach(l => { if (!m[l.date]) m[l.date] = []; m[l.date].push(l); });
+  return m;
+}
+ 
+function renderStats() {
+  _renderCal();
+  if (_sTab === 'insights') _renderInsights();
+}
+ 
+/* ── CALENDAR ── */
+function _renderCal() {
+  const MNL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  $('st-cal-title').textContent = MNL[_calM] + ' ' + _calY;
+  const map = _logsByDate();
+  const today = new Date();
+  const dim = new Date(_calY, _calM + 1, 0).getDate();
+  const firstDow = new Date(_calY, _calM, 1).getDay();
+  let maxInM = 1;
+  for (let d = 1; d <= dim; d++) {
+    const k = `${_calY}-${String(_calM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    if ((map[k]||[]).length > maxInM) maxInM = (map[k]||[]).length;
+  }
+  const grid = $('st-cal-grid'); grid.innerHTML = '';
+  for (let i = 0; i < firstDow; i++) {
+    const e = document.createElement('div'); e.className = 'st-day blank'; grid.appendChild(e);
+  }
+  for (let d = 1; d <= dim; d++) {
+    const k = `${_calY}-${String(_calM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const ss = map[k] || [];
+    const el = document.createElement('div');
+    el.className = 'st-day in-month';
+    el.textContent = d;
+    const isToday = today.getFullYear() === _calY && today.getMonth() === _calM && today.getDate() === d;
+    if (isToday) el.classList.add('is-today');
+    if (ss.length > 0) {
+      el.classList.add('has-log');
+      const r = ss.length / maxInM;
+      el.classList.add(r <= .25 ? 's1' : r <= .5 ? 's2' : r <= .75 ? 's3' : 's4');
+      el.addEventListener('click', () => { _calSel = _calSel === k ? null : k; _renderCal(); });
+    }
+    if (_calSel === k) el.classList.add('picked');
+    grid.appendChild(el);
+  }
+  // Day detail
+  const det = $('st-day-detail'); det.innerHTML = '';
+  if (_calSel && map[_calSel]) {
+    const ss = map[_calSel];
+    const ds = new Date(_calSel + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    det.className = 'st-day-detail';
+    det.innerHTML = `<div class="st-day-detail-date">${ds} · ${ss.length} session${ss.length > 1 ? 's' : ''}</div>`
+      + ss.map(s => `<div class="st-day-session"><span class="st-day-session-subj">${esc(s.subject || 'Untitled')}</span><span class="st-day-session-time">${esc(s.time || '—')}</span></div>`).join('');
+  }
+}
+ 
+/* ── HEATMAP ── */
+function _renderHeatmap(map) {
+  const grid = $('st-heatmap-grid');
+  const monthsEl = $('st-hm-months');
+  if (!grid) return;
+  const WEEKS = 16;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const startDate = new Date(today);
+  startDate.setDate(today.getDate() - today.getDay() - (WEEKS-1)*7);
+  const allDays = [];
+  for (let i = 0; i < WEEKS*7; i++) {
+    const d = new Date(startDate); d.setDate(startDate.getDate() + i);
+    allDays.push(d);
+  }
+  grid.innerHTML = '';
+  monthsEl.innerHTML = '';
+  const MN_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let lastMonth = -1;
+  for (let w = 0; w < WEEKS; w++) {
+    const col = document.createElement('div'); col.className = 'st-hm-col';
+    let colMonth = -1;
+    for (let dw = 0; dw < 7; dw++) {
+      const d = allDays[w*7+dw];
+      const k = d.toISOString().split('T')[0];
+      const cnt = (map[k]||[]).length;
+      const cell = document.createElement('div');
+      cell.className = 'st-hm-cell';
+      if (cnt === 1) cell.classList.add('h1');
+      else if (cnt === 2) cell.classList.add('h2');
+      else if (cnt === 3) cell.classList.add('h3');
+      else if (cnt >= 4) cell.classList.add('h4');
+      if (d.toDateString()===today.toDateString()) cell.style.outline='1.5px solid var(--accent)';
+      cell.title = k + (cnt ? ` · ${cnt} session${cnt>1?'s':''}` : '');
+      col.appendChild(cell);
+      if (dw===0) colMonth = d.getMonth();
+    }
+    grid.appendChild(col);
+    const lbl = document.createElement('div');
+    lbl.className = 'st-hm-month-lbl';
+    lbl.textContent = (colMonth !== lastMonth) ? MN_SHORT[colMonth] : '';
+    if (colMonth !== lastMonth) lastMonth = colMonth;
+    monthsEl.appendChild(lbl);
+  }
+}
+ 
+/* ── INSIGHTS ── */
+function _renderInsights() {
+  const logs = DS.logs || [];
+  const map  = _logsByDate();
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const DOW_S = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+  const DOW_F = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+ 
+  // Numbers
+  $('st-n-sessions').textContent = logs.length;
+  $('st-n-days').textContent     = Object.keys(map).length;
+  $('st-n-streak').textContent   = DS.streak;
+ 
+  // Week bars (Sun–Sat of current week)
+  const weekStart = new Date(today);
+  weekStart.setDate(today.getDate() - today.getDay());
+  const barsEl = $('st-bars'); barsEl.innerHTML = '';
+  let weekHit = 0;
+  const dayCounts = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(weekStart); d.setDate(weekStart.getDate() + i);
+    const k = d.toISOString().split('T')[0];
+    const cnt = (map[k] || []).length;
+    if (cnt) weekHit++;
+    dayCounts.push({ cnt, dow: d.getDay(), isToday: d.toDateString() === today.toDateString() });
+  }
+  const maxDay = Math.max(1, ...dayCounts.map(x => x.cnt));
+  dayCounts.forEach(({ cnt, dow, isToday }) => {
+    const h = cnt > 0 ? Math.max(6, Math.round((cnt / maxDay) * 44)) : 3;
+    const col = document.createElement('div'); col.className = 'st-bar-col';
+    const bar = document.createElement('div');
+    bar.className = 'st-bar' + (cnt > 0 ? ' active' : '') + (isToday ? ' now' : '');
+    bar.style.height = h + 'px';
+    const lbl = document.createElement('div');
+    lbl.className = 'st-bar-day' + (isToday ? ' now' : '');
+    lbl.textContent = DOW_S[dow];
+    col.append(bar, lbl); barsEl.appendChild(col);
+  });
+ 
+  // Subjects pie chart
+  const sc = {};
+  logs.forEach(l => { const s = l.subject || 'Untitled'; sc[s] = (sc[s] || 0) + 1; });
+  const top = Object.entries(sc).sort((a, b) => b[1] - a[1]).slice(0, 7);
+  const PIE_COLORS = ['#52e87a','#4a8fd4','#c98830','#d95050','#8060c8','#30c8a8','#c85090'];
+  const pieCanvas = $('st-pie-canvas');
+  const pieLegend = $('st-pie-legend');
+  if (!top.length) {
+    pieCanvas.style.display = 'none';
+    pieLegend.innerHTML = '<div class="st-pie-empty">Log sessions to see subject breakdown.</div>';
+  } else {
+    pieCanvas.style.display = '';
+    const total = top.reduce((a,[,n])=>a+n,0);
+    const SIZE = 140;
+    pieCanvas.width = SIZE; pieCanvas.height = SIZE;
+    const ctx2 = pieCanvas.getContext('2d');
+    const cx=SIZE/2, cy=SIZE/2, r=SIZE/2-6, ri=SIZE/2-34;
+    ctx2.clearRect(0,0,SIZE,SIZE);
+    let angle=-Math.PI/2;
+    top.forEach(([,cnt],i)=>{
+      const slice=(cnt/total)*Math.PI*2;
+      ctx2.beginPath();
+      ctx2.moveTo(cx,cy);
+      ctx2.arc(cx,cy,r,angle,angle+slice);
+      ctx2.closePath();
+      ctx2.fillStyle=PIE_COLORS[i%PIE_COLORS.length];
+      ctx2.fill();
+      angle+=slice;
+    });
+    // Gap lines between slices for clarity
+    angle=-Math.PI/2;
+    top.forEach(([,cnt])=>{
+      const slice=(cnt/total)*Math.PI*2;
+      ctx2.beginPath();
+      ctx2.moveTo(cx,cy);
+      const ex=cx+Math.cos(angle)*r, ey=cy+Math.sin(angle)*r;
+      ctx2.lineTo(ex,ey);
+      ctx2.strokeStyle='rgba(0,0,0,0.18)';
+      ctx2.lineWidth=1.5;
+      ctx2.stroke();
+      angle+=slice;
+    });
+    // Donut hole — explicit color based on theme
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    ctx2.beginPath();
+    ctx2.arc(cx,cy,ri,0,Math.PI*2);
+    ctx2.fillStyle = isDark ? '#151515' : '#f8f7f4';
+    ctx2.fill();
+    // Center text
+    ctx2.textAlign='center'; ctx2.textBaseline='middle';
+    ctx2.fillStyle = isDark ? '#deded8' : '#1a1916';
+    ctx2.font="bold 20px 'DM Sans',sans-serif";
+    ctx2.fillText(total, cx, cy-7);
+    ctx2.font="10px 'DM Mono',monospace";
+    ctx2.fillStyle = isDark ? '#6a6a64' : '#6e6b63';
+    ctx2.fillText('sessions', cx, cy+10);
+    pieLegend.innerHTML = top.map(([name,cnt],i)=>
+      `<div class="st-pie-legend-item">` +
+        `<div class="st-pie-legend-dot" style="background:${PIE_COLORS[i%PIE_COLORS.length]};"></div>` +
+        `<span class="st-pie-legend-name">${esc(name)}</span>` +
+        `<span class="st-pie-legend-pct">${Math.round(cnt/total*100)}%</span>` +
+      `</div>`
+    ).join('');
+  }
+ 
+  // Facts
+  $('st-f-streak').textContent = DS.streak > 0 ? `${DS.streak} day${DS.streak !== 1 ? 's' : ''}` : '—';
+  $('st-f-best').textContent   = DS.best   > 0 ? `${DS.best} day${DS.best !== 1 ? 's' : ''}`   : '—';
+  $('st-f-week').textContent   = weekHit > 0   ? `${weekHit} of 7 days` : '—';
+ 
+  // Peak day
+  const dowC = [0,0,0,0,0,0,0];
+  logs.forEach(l => { dowC[new Date(l.date + 'T00:00:00').getDay()]++; });
+  const best = dowC.indexOf(Math.max(...dowC));
+  $('st-f-peak').textContent = logs.length && dowC[best] > 0 ? DOW_F[best] + 's' : '—';
+}
+ 
 /* ═══ SPLASH + BOOT ═══ */
 // Update applyTheme to also update splash icon
 const _origApplyTheme=applyTheme;
@@ -2306,7 +2848,7 @@ function applyThemeFull(t){
     ?`<path d="${sunPath}" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`
     :`<path d="${moonPath}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`;
 }
-
+ 
 function leaveSplash(){
   const sp=$('page-splash');
   sp.classList.add('exit');
@@ -2315,7 +2857,7 @@ function leaveSplash(){
     navTo('dashboard');
   },380);
 }
-
+ 
 $('splash-cta').addEventListener('click',()=>{
   localStorage.setItem('ss_seen','1');
   leaveSplash();
@@ -2326,7 +2868,7 @@ if($('splash-theme-btn')){
     applyThemeFull(document.documentElement.getAttribute('data-theme'));
   });
 }
-
+ 
 (function boot(){
   const t=localStorage.getItem('ss_theme')||'dark';
   applyTheme(t);
@@ -2345,10 +2887,10 @@ if($('splash-theme-btn')){
     $('page-splash').classList.add('active');
   }
   $('home-cta').addEventListener('click',()=>localStorage.setItem('ss_seen','1'),{once:true});
-
+ 
   // Start the hourly reminder engine
   maybeStartReminders();
-
+ 
   // If notifications already granted from a previous visit, start reminders silently
   if ('Notification' in window && Notification.permission === 'granted') {
     startHourlyReminders();
